@@ -8,7 +8,7 @@ Batangas State University, Alangilan Campus
 
 | Name | Student Number | Section |
 |---|---|---|
-| , First Name | | |
+| Siall, Mohammad Addnan L. |23-06554 |MEXE 4101 |
 | Velasquez, Gilianne A. |23-00244 |MEXE 4101 |
 
 ## Notebook links
