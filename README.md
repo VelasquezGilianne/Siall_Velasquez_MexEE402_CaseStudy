@@ -48,7 +48,8 @@ We learned that outliers are values that are very different from most of the dat
 
 ### Error found on CHAPTER 6:
 
-Error: `outliers = data[np.abs(z_scores) > 3]`
+Error: 
+```outliers = data[np.abs(z_scores) > 3]```
 
 Corrected Version: `outliers = data[np.abs(z_scores) > 2]`
 
@@ -57,10 +58,10 @@ The error is in the threshold. The z-score of 100 is only 2.615, which is less t
 ### Error found on CHAPTER 7:
 
 Error: 
-```selector = RFECV(estimator, step=1, cv=5)```
+`  selector = RFECV(estimator, step=1, cv=5)`
 
 Corrected Version:
-```selector = RFECV(estimator, step=1, cv=3)```
+`selector = RFECV(estimator, step=1, cv=3)`
 
 The error is in the number of cross-validation folds. With cv=5, the dataset is split into five folds, and each fold must contain enough samples to score. The warning “R^2 score is not well-defined with less than two samples” shows that some test folds contain only one sample, which means the dataset is too small for five folds. R² cannot be computed on a single sample, so every fold returns an undefined score and the selection becomes unreliable. Changing to cv=3 creates larger test folds, each with at least two samples, so R² can be computed and the warnings disappear.
 
