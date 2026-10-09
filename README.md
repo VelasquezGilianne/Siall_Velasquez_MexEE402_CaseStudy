@@ -99,13 +99,14 @@ The label is wrong. The histogram shows the categories Adult, Elderly, and Child
 <table>
   <tr>
     <th scope="row">Error:</th>
-    <tdplt.hist(titanic_preprocessed[:,2], alpha=0.5, label='After discretization')</td>
+    <t>dplt.hist(titanic_preprocessed[:,2], alpha=0.5, label='After discretization')</td>
   </tr>
   <tr>
     <th scope="row">Correction:</th>
     <td>plt.hist(titanic_preprocessed[:,0], alpha=0.5, label='Before discretization')</td>
   </tr>
 </table>
+      
 Error: `plt.hist(titanic_preprocessed[:,2], alpha=0.5, label='After discretization')`
 
 Corrected Version: `plt.hist(titanic_preprocessed[:,0], alpha=0.5, label='Before discretization')`
