@@ -90,10 +90,6 @@ The error is in the number of cross-validation folds. With ``cv=5``, the dataset
 </table>
 
 
-Error: `plt.hist(data['Age'].dropna(), alpha=0.5, label='Before discretization')`
-
-Corrected Version: `plt.hist(data['Age'].dropna(), alpha=0.5, label='After discretization')`
-
 The label is wrong. The histogram shows the categories Adult, Elderly, and Child on the x-axis, which means ``data['Age']`` was already discretized when this plot was made. Since the plot shows the data after discretization, the label should be ‘After discretization’ instead of ‘Before discretization’.
 
 
@@ -107,12 +103,6 @@ The label is wrong. The histogram shows the categories Adult, Elderly, and Child
     <td>plt.hist(titanic_preprocessed[:,0], alpha=0.5, label='Before discretization')</td>
   </tr>
 </table>
-
-
- 
-Error: `plt.hist(titanic_preprocessed[:,2], alpha=0.5, label='After discretization')`
-
-Corrected Version: `plt.hist(titanic_preprocessed[:,0], alpha=0.5, label='Before discretization')`
 
 The wrong column is plotted. ``titanic_preprocessed[:,2]`` only contains the values 0.0 and 1.0, so it is a binary or encoded column and does not show the age distribution. Column 0 holds the original continuous age values, so ``titanic_preprocessed[:,0]`` is the correct choice, and it should be labeled ‘Before discretization’.
 
