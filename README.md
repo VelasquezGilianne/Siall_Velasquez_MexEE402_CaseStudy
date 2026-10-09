@@ -28,6 +28,9 @@ Batangas State University, Alangilan Campus
 One short paragraph per chapter, Ch1_2_3 to Ch9. Say what the chapter taught
 you and what surprised you. Not what the library does, but what you understood.
 
+  Chapter 7:
+  This chapter was all about feature selection and we learnt how filtering out useless data so the language learning models can be trained better. We learnt the different philosophies behind it: filter methods use correlation, wrapper methods use overall scoring, and embedded methods act like a sculptor chipping away data during training. The biggest surprise to us was when we ran the wrapper method of RFECV, printing out the features selected showed a long list of warnings. We first assumed it to be an error but just before the warning, we observed it already selected the 'assignments completed'. The final table itself was rather surprising too as even though filter, and embedded have overlapping feature, all three selection method choices were unique.  
+
   Chapter 8:
   What we learnt from this chapter is the construction of a preprocessing pipeline. This meant shifting from manual, time-consuming data preparation, to a more automated and sequential process. Instead of performing imputation and scaling in individual cells, it was performed as is in a single cell. To us, this taught that if you want to keep a workflow clean and less redundant in a single cell, a pipeline usage is highly efficient.
 
