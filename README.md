@@ -28,6 +28,9 @@ Batangas State University, Alangilan Campus
 One short paragraph per chapter, Ch1_2_3 to Ch9. Say what the chapter taught
 you and what surprised you. Not what the library does, but what you understood.
 
+  Chapter 8:
+  What we learnt from this chapter is the construction of a preprocessing pipeline. This meant shifting from manual, time-consuming data preparation, to a more automated and sequential process. Instead of performing imputation and scaling in individual cells, it was performed as is in a single cell. To us, this taught that if you want to keep a workflow clean and less redundant in a single cell, a pipeline usage is highly efficient.
+
   Chapter 9 :
   This chapter gave us the chance to put preprocessing techniques learnt from the previous lessons such as: data cleaning, transformation, reduction, discretization, and encoding, into real-world practice. However, the most important takeaway was the use of data visualization. Plots like bar graphs, boxplots, histograms, point plots, distribution graphs, and heatmaps allows us to see exactly what the data represents in a clean, orderly way. Much like preprocessing makes data easier for a machine learning model to train on, visualization makes data easier for us to understand.
 
