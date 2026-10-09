@@ -47,6 +47,16 @@ This chapter gave us the chance to put preprocessing techniques learnt from the 
 ## Errors we found
 
 - ### Error found on CHAPTER 6:
+<table>
+  <tr>
+    <th scope="row">Error:</th>
+    <td>outliers = data[np.abs(z_scores) > 3]</td>
+  </tr>
+  <tr>
+    <th scope="row">Correction:</th>
+    <td>outliers = data[np.abs(z_scores) > 2]</td>
+  </tr>
+</table>
 
 Error: `outliers = data[np.abs(z_scores) > 3]`
 
@@ -59,18 +69,14 @@ The error is in the threshold. The z-score of 100 is only 2.615, which is less t
 <table>
   <tr>
     <th scope="row">Error:</th>
-    <td>`selector = RFECV(estimator, step=1, cv=5)`</td>
+    <td>selector = RFECV(estimator, step=1, cv=5)</td>
   </tr>
   <tr>
     <th scope="row">Correction:</th>
-    <td>`selector = RFECV(estimator, step=1, cv=3)`</td>
+    <td>selector = RFECV(estimator, step=1, cv=3)</td>
   </tr>
 </table>
 
-
-Error: `selector = RFECV(estimator, step=1, cv=5)`
-
-Corrected Version: `selector = RFECV(estimator, step=1, cv=3)`
 
 The error is in the number of cross-validation folds. With ``cv=5``, the dataset is split into five folds, and each fold must contain enough samples to score. The warning “R^2 score is not well-defined with less than two samples” shows that some test folds contain only one sample, which means the dataset is too small for five folds. R² cannot be computed on a single sample, so every fold returns an undefined score and the selection becomes unreliable. Changing to ``cv=3`` creates larger test folds, each with at least two samples, so R² can be computed and the warnings disappear.
 
