@@ -42,8 +42,36 @@ Chapter 6: I learned that outliers are values that are very different from most 
 
 ## Errors we found
 
-List any mistake you found in the original notebooks, and the correct version.
-There are real ones in there. Finding them earns points.
+Error found on CHAPTER 6:
+
+Error: outliers = data[np.abs(z_scores) > 3]
+
+Corrected Version: outliers = data[np.abs(z_scores) > 2]
+
+The error is in the threshold. The z-score of 100 is only 2.615, which is less than 3, so the condition np.abs(z_scores) > 3 returns an empty array and 100 is not flagged even though it is clearly an outlier. This happens because 100 itself raises the mean and standard deviation, which lowers its own z-score. With a small dataset of only eight values, a z-score above 3 is hard to reach. Changing the threshold to 2 fixes this, since 2.615 > 2 while every other value has an absolute z-score below 0.6, so the output becomes Outliers: [100].
+
+Error found on CHAPTER 7:
+
+Error: selector = RFECV(estimator, step=1, cv=5)
+
+Corrected Version: selector = RFECV(estimator, step=1, cv=3)
+
+The error is in the number of cross-validation folds. With cv=5, the dataset is split into five folds, and each fold must contain enough samples to score. The warning “R^2 score is not well-defined with less than two samples” shows that some test folds contain only one sample, which means the dataset is too small for five folds. R² cannot be computed on a single sample, so every fold returns an undefined score and the selection becomes unreliable. Changing to cv=3 creates larger test folds, each with at least two samples, so R² can be computed and the warnings disappear.
+
+Errors found on CHAPTER 9:
+
+Error: plt.hist(data['Age'].dropna(), alpha=0.5, label='Before discretization')
+
+Corrected Version: plt.hist(data['Age'].dropna(), alpha=0.5, label='After discretization')
+
+The label is wrong. The histogram shows the categories Adult, Elderly, and Child on the x-axis, which means data['Age'] was already discretized when this plot was made. Since the plot shows the data after discretization, the label should be ‘After discretization’ instead of ‘Before discretization’.
+
+
+Error: plt.hist(titanic_preprocessed[:,2], alpha=0.5, label='After discretization')
+
+Corrected Version: plt.hist(titanic_preprocessed[:,0], alpha=0.5, label='Before discretization')
+
+The wrong column is plotted. titanic_preprocessed[:,2] only contains the values 0.0 and 1.0, so it is a binary or encoded column and does not show the age distribution. Column 0 holds the original continuous age values, so titanic_preprocessed[:,0] is the correct choice, and it should be labeled ‘Before discretization’.
 
 ## Note on AI tools
 
