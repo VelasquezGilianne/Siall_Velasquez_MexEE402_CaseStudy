@@ -48,15 +48,10 @@ We learned that outliers are values that are very different from most of the dat
 
 ### Error found on CHAPTER 6:
 
-Error: 
-
-```outliers = data[np.abs(z_scores) > 3]```
-
-
-
+Error: `outliers = data[np.abs(z_scores) > 3]`
 Corrected Version: `outliers = data[np.abs(z_scores) > 2]`
 
-The error is in the threshold. The z-score of 100 is only 2.615, which is less than 3, so the condition np.abs(z_scores) > 3 returns an empty array and 100 is not flagged even though it is clearly an outlier. This happens because 100 itself raises the mean and standard deviation, which lowers its own z-score. With a small dataset of only eight values, a z-score above 3 is hard to reach. Changing the threshold to 2 fixes this, since 2.615 > 2 while every other value has an absolute z-score below 0.6, so the output becomes Outliers: [100].
+The error is in the threshold. The z-score of 100 is only 2.615, which is less than 3, so the ``condition np.abs(z_scores) > 3`` returns an empty array and 100 is not flagged even though it is clearly an outlier. This happens because 100 itself raises the mean and standard deviation, which lowers its own z-score. With a small dataset of only eight values, a z-score above 3 is hard to reach. Changing the threshold to 2 fixes this, since 2.615 > 2 while every other value has an absolute z-score below 0.6, so the output becomes Outliers: ``[100].``
 
 ### Error found on CHAPTER 7:
 
