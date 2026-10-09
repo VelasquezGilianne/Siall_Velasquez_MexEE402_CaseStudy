@@ -1,4 +1,4 @@
-# MexEE 402: Data Preprocessing Case Study
+<img width="1534" height="961" alt="image" src="https://github.com/user-attachments/assets/776f0f74-6c7d-4c0f-b235-7454b9a3ed84" /># MexEE 402: Data Preprocessing Case Study
 
 MexEE Elective 2: Data Science and Machine Learning
 Batangas State University, Alangilan Campus
@@ -49,8 +49,7 @@ There are real ones in there. Finding them earns points.
 
 ## Note on AI tools
 
-Say whether you used an AI tool, and what for. This is not a penalty.
-Hiding it is.
+We used AI as a supporting tool to help us correct the errors we identified in the code. After locating the possible errors, we provided the incorrect and expected lines of code to the AI and used its explanations to better understand why the changes were necessary. AI helped us compare the codes, identify differences in parameters, labels, and data being used, and explain how these errors could affect the results of the program. However, we still reviewed the suggested corrections and made sure that they were consistent with the concepts and procedures discussed in the notebook.
 
 ## References
 
