@@ -28,6 +28,9 @@ Batangas State University, Alangilan Campus
 One short paragraph per chapter, Ch1_2_3 to Ch9. Say what the chapter taught
 you and what surprised you. Not what the library does, but what you understood.
 
+  Chapter 9 :
+  This chapter gave us the chance to put preprocessing techniques learnt from the previous lessons such as: data cleaning, transformation, reduction, discretization, and encoding, into real-world practice. However, the most important takeaway was the use of data visualization. Plots like bar graphs, boxplots, histograms, point plots, distribution graphs, and heatmaps allows us to see exactly what the data represents in a clean, orderly way. Much like preprocessing makes data easier for a machine learning model to train on, visualization makes data easier for us to understand.
+
 ## Errors we found
 
 List any mistake you found in the original notebooks, and the correct version.
