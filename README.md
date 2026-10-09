@@ -56,6 +56,18 @@ The error is in the threshold. The z-score of 100 is only 2.615, which is less t
 
 - ### Error found on CHAPTER 7:
 
+<table>
+  <tr>
+    <th scope="row">Error:</th>
+    <td>`selector = RFECV(estimator, step=1, cv=5)`</td>
+  </tr>
+  <tr>
+    <th scope="row">Correction:</th>
+    <td>`selector = RFECV(estimator, step=1, cv=3)`</td>
+  </tr>
+</table>
+
+
 Error: `selector = RFECV(estimator, step=1, cv=5)`
 
 Corrected Version: `selector = RFECV(estimator, step=1, cv=3)`
