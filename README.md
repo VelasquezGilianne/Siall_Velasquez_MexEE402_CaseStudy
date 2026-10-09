@@ -58,10 +58,6 @@ This chapter gave us the chance to put preprocessing techniques learnt from the 
   </tr>
 </table>
 
-Error: `outliers = data[np.abs(z_scores) > 3]`
-
-Corrected Version: `outliers = data[np.abs(z_scores) > 2]`
-
 The error is in the threshold. The z-score of 100 is only 2.615, which is less than 3, so the ``condition np.abs(z_scores) > 3`` returns an empty array and 100 is not flagged even though it is clearly an outlier. This happens because 100 itself raises the mean and standard deviation, which lowers its own z-score. With a small dataset of only eight values, a z-score above 3 is hard to reach. Changing the threshold to 2 fixes this, since 2.615 > 2 while every other value has an absolute z-score below 0.6, so the output becomes Outliers: ``[100].``
 
 - ### Error found on CHAPTER 7:
@@ -82,12 +78,34 @@ The error is in the number of cross-validation folds. With ``cv=5``, the dataset
 
 - ### Errors found on CHAPTER 9:
 
+<table>
+  <tr>
+    <th scope="row">Error:</th>
+    <td>plt.hist(data['Age'].dropna(), alpha=0.5, label='Before discretization')</td>
+  </tr>
+  <tr>
+    <th scope="row">Correction:</th>
+    <td>plt.hist(data['Age'].dropna(), alpha=0.5, label='After discretization')</td>
+  </tr>
+</table>
+
+
 Error: `plt.hist(data['Age'].dropna(), alpha=0.5, label='Before discretization')`
 
 Corrected Version: `plt.hist(data['Age'].dropna(), alpha=0.5, label='After discretization')`
 
 The label is wrong. The histogram shows the categories Adult, Elderly, and Child on the x-axis, which means ``data['Age']`` was already discretized when this plot was made. Since the plot shows the data after discretization, the label should be ‘After discretization’ instead of ‘Before discretization’.
 
+<table>
+  <tr>
+    <th scope="row">Error:</th>
+    <tdplt.hist(titanic_preprocessed[:,2], alpha=0.5, label='After discretization')</td>
+  </tr>
+  <tr>
+    <th scope="row">Correction:</th>
+    <td>plt.hist(titanic_preprocessed[:,0], alpha=0.5, label='Before discretization')</td>
+  </tr>
+</table>
 Error: `plt.hist(titanic_preprocessed[:,2], alpha=0.5, label='After discretization')`
 
 Corrected Version: `plt.hist(titanic_preprocessed[:,0], alpha=0.5, label='Before discretization')`
