@@ -48,7 +48,11 @@ We learned that outliers are values that are very different from most of the dat
 
 ### Error found on CHAPTER 6:
 
-Error: `outliers = data[np.abs(z_scores) > 3]`
+Error: 
+
+```outliers = data[np.abs(z_scores) > 3]```
+
+
 
 Corrected Version: `outliers = data[np.abs(z_scores) > 2]`
 
